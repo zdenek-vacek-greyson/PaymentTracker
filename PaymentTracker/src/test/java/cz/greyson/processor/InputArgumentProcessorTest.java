@@ -45,7 +45,7 @@ public class InputArgumentProcessorTest {
         // expected results
 
         // test execution
-        List<String> processResults = inputArgumentProcessor.process(null);
+        List<String> processResults = inputArgumentProcessor.processInputFile(null);
 
         // result validation
         assertTrue(processResults.isEmpty());
@@ -57,7 +57,7 @@ public class InputArgumentProcessorTest {
 
         // test execution
         String[] args = new String[] {"blablabla.txt"};
-        List<String> processResults = inputArgumentProcessor.process(null);
+        List<String> processResults = inputArgumentProcessor.processInputFile(null);
 
         // result validation
         assertTrue(processResults.isEmpty());

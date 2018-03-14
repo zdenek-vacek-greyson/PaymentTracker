@@ -38,4 +38,4 @@ anebo "java -jar target/PaymentTracker-1.0-SNAPSHOT-jar-with-dependencies.jar ..
 vstupni soubor
 
 # Jak ukoncit aplikaci:
-    - napsani prikazu "exit" anebo "quit" do vstupni konzele
+    - napsani prikazu "exit" anebo "quit" do vstupni konzole

@@ -16,7 +16,13 @@ public class InputArgumentProcessor {
 
     final static Logger logger = Logger.getLogger(InputArgumentProcessor.class);
 
-    public List<String> process(String[] args) {
+    /**
+     * Method for checking input arguments and attempt to open input file
+     *
+     * @param args - input arguments array
+     * @return loaded input lines collection in memory
+     * */
+    public List<String> processInputArguments(String[] args) {
         List<String> inputLines = new ArrayList<>();
 
         if (args == null) {
@@ -37,6 +43,12 @@ public class InputArgumentProcessor {
         return inputLines;
     }
 
+    /**
+     * Method for read line of input text file info internal List<String>
+     *
+     * @param inputFile - initial input file
+     * @return loaded input lines collection in memory
+     * */
     public List<String> processInputFile(File inputFile) {
         List<String> inputLines = new ArrayList<>();
         try {

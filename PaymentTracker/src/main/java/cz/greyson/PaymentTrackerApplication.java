@@ -14,6 +14,7 @@ import java.util.Map;
  * @author Zdeněk Vacek on 13/03/2018
  */
 public class PaymentTrackerApplication {
+    /* Internal application memory */
     private Map<String, BigDecimal> internalMemory;
 
     private InputConsoleThread inputConsoleThread;
@@ -36,7 +37,7 @@ public class PaymentTrackerApplication {
         PaymentTrackerApplication paymentTrackerApplication = new PaymentTrackerApplication();
 
         // possible initialization from input file
-        List<String> inputLines = paymentTrackerApplication.inputArgumentProcessor.process(args);
+        List<String> inputLines = paymentTrackerApplication.inputArgumentProcessor.processInputArguments(args);
         paymentTrackerApplication.inputDataProcessor.processInputData(inputLines);
 
         paymentTrackerApplication.printerThread.start();

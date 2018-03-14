@@ -37,6 +37,12 @@ public class InputDataProcessor {
         processInputData(validInputPair);
     }
 
+
+    /**
+     * Main calculation logic. Inserting new values into memory HashMap and appending existing values
+     *
+     * @param inputPair - new input values combination in Pair, key with value
+     * */
     private void processInputData(Pair<String, BigDecimal> inputPair) {
         String key = inputPair.getKey();
         BigDecimal value = inputPair.getValue();
@@ -45,10 +51,18 @@ public class InputDataProcessor {
             paymentTrackerApplication.getInternalMemory().put(key, value);
 
         } else {
-            // append value
+            // calculation new value
             BigDecimal oldValue = paymentTrackerApplication.getInternalMemory().get(key);
             BigDecimal newValue = oldValue.add(value);
-            paymentTrackerApplication.getInternalMemory().put(key, newValue);
+
+            if (newValue.compareTo(BigDecimal.ZERO) != 0) {
+                // append value
+                paymentTrackerApplication.getInternalMemory().put(key, newValue);
+            } else {
+                // remove redundant ZERO row
+                paymentTrackerApplication.getInternalMemory().remove(key);
+            }
         }
+
     }
 }
