@@ -1,6 +1,7 @@
 package cz.greyson.threads;
 
 import cz.greyson.PaymentTrackerApplication;
+import org.apache.log4j.Logger;
 
 import java.util.Set;
 
@@ -8,6 +9,8 @@ import java.util.Set;
  * @author Zdeněk Vacek on 13/03/2018
  */
 public class PrinterThread extends AbstractPaymentTrackerThread {
+
+    final static Logger logger = Logger.getLogger(PrinterThread.class);
 
     // 60 x 1000 = 60s
     private static final long CONSOLE_REFRESH_PERIOD_IN_MILLIS = 60 * 1000L;
@@ -21,7 +24,7 @@ public class PrinterThread extends AbstractPaymentTrackerThread {
             try {
                 Thread.sleep(CONSOLE_REFRESH_PERIOD_IN_MILLIS);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                logger.debug(e.getMessage());
             }
             printInternalMemory();
         }

@@ -12,7 +12,7 @@ import java.math.BigDecimal;
 public class LineValidatorImpl implements ILineValidator {
 
     public Pair<String, BigDecimal> isValid(Pair<String, String> inputPair) throws ValidatorException {
-        return new Pair<String, BigDecimal>(inputKeyValidation(inputPair.getKey()), inputValueValidation(inputPair.getValue()));
+        return new Pair<>(inputKeyValidation(inputPair.getKey()), inputValueValidation(inputPair.getValue()));
     }
 
     public String inputKeyValidation(String inputKey) throws ValidatorException {

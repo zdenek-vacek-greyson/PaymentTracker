@@ -13,7 +13,9 @@
         <guava.version>23.0</guava.version>
         <log4j.version>1.2.17</log4j.version>
         <junit.version>4.12</junit.version>
-        <maven-compiler-plugin.version>1.8</maven-compiler-plugin.version>
+        <maven-compiler-plugin.version>3.1</maven-compiler-plugin.version>
+        <maven-compiler-plugin-source.version>1.8</maven-compiler-plugin-source.version>
+        <maven-compiler-plugin-target.version>1.8</maven-compiler-plugin-target.version>
     </properties>
 
     <build>
@@ -21,9 +23,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven-compiler-plugin.version}</version>
                 <configuration>
-                    <source>${maven-compiler-plugin.version}</source>
-                    <target>${maven-compiler-plugin.version}</target>
+                    <source>${maven-compiler-plugin-source.version}</source>
+                    <target>${maven-compiler-plugin-target.version}</target>
                 </configuration>
             </plugin>
             <plugin>

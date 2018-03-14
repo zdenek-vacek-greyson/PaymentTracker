@@ -36,9 +36,8 @@ public class InputConsoleThread extends AbstractPaymentTrackerThread {
 
                 // exit application
                 if (inputLine.equals("exit") || inputLine.equals("quit")) {
-                    logger.debug("Konec programu");
+                    logger.info("Konec programu");
                     stopApplication();
-                    continue;
                 }
 
                 paymentTrackerApplication.getInputDataProcessor().processInputData(inputLine);
@@ -54,5 +53,6 @@ public class InputConsoleThread extends AbstractPaymentTrackerThread {
     private void stopApplication() {
         paymentTrackerApplication.getPrinterThread().interrupt();
         this.interrupt();
+        System.exit(0);
     }
 }
