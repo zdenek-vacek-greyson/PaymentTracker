@@ -11,13 +11,17 @@ import java.util.List;
 import java.util.Map;
 
 /**
+ * MainClass of PaymentTracker application.
+ *
  * @author Zdeněk Vacek on 13/03/2018
  */
 public class PaymentTrackerApplication {
     /* Internal application memory */
     private Map<String, BigDecimal> internalMemory;
 
+    /* Thread for input console */
     private InputConsoleThread inputConsoleThread;
+    /* Thread for internal memory printer */
     private PrinterThread printerThread;
 
     private InputArgumentProcessor inputArgumentProcessor;
@@ -43,6 +47,8 @@ public class PaymentTrackerApplication {
         paymentTrackerApplication.printerThread.start();
         paymentTrackerApplication.inputConsoleThread.start();
     }
+
+    /* GETTERS & SETTERS */
 
     public synchronized Map<String, BigDecimal> getInternalMemory() {
         return internalMemory;

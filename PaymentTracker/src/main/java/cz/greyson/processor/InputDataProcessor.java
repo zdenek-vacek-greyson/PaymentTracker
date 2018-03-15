@@ -11,6 +11,8 @@ import java.math.BigDecimal;
 import java.util.List;
 
 /**
+ * Input data processor, calculation, logical and mathematical operations
+ *
  * @author Zdeněk Vacek on 14/03/2018
  */
 public class InputDataProcessor {
@@ -25,12 +27,22 @@ public class InputDataProcessor {
         this.validator = new LineValidatorImpl();
     }
 
+    /**
+     * Method for processing List of parsed input lines
+     *
+     * @param inputLines - List of parsed input lines
+     */
     public void processInputData(List<String> inputLines) throws ValidatorException {
         for (String inputLine : inputLines) {
             processInputData(inputLine);
         }
     }
 
+    /**
+     * Method for processing of parsed input line
+     *
+     * @param inputLine - parsed input line
+     */
     public void processInputData(String inputLine) throws ValidatorException {
         Pair<String, String> inputPair = inputLineParser.parseLine(inputLine);
         Pair<String, BigDecimal> validInputPair = validator.isValid(inputPair);

@@ -18,6 +18,10 @@ public class InputConsoleThread extends AbstractPaymentTrackerThread {
         super(paymentTrackerApplication);
     }
 
+
+    /**
+     * Main thread method. Infinity loop for reading input from keyboard and his processing
+     */
     public void run() {
         InputStreamReader inputStreamReader = new InputStreamReader(System.in);
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -50,6 +54,9 @@ public class InputConsoleThread extends AbstractPaymentTrackerThread {
         }
     }
 
+    /**
+     * Helper method for application close
+     * */
     private void stopApplication() {
         paymentTrackerApplication.getPrinterThread().interrupt();
         this.interrupt();

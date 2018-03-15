@@ -19,6 +19,9 @@ public class PrinterThread extends AbstractPaymentTrackerThread {
         super(paymentTrackerApplication);
     }
 
+    /**
+     * Main thread method. Infinity loop for reading input from keyboard and his processing
+     */
     public void run() {
         while (true) {
             try {
@@ -30,6 +33,9 @@ public class PrinterThread extends AbstractPaymentTrackerThread {
         }
     }
 
+    /**
+     * Helper method for internal memory printing
+     * */
     void printInternalMemory() {
         System.out.println();
         System.out.println();

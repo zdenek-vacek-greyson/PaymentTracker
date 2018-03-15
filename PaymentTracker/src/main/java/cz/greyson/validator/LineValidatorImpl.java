@@ -11,10 +11,12 @@ import java.math.BigDecimal;
  */
 public class LineValidatorImpl implements ILineValidator {
 
+    @Override
     public Pair<String, BigDecimal> isValid(Pair<String, String> inputPair) throws ValidatorException {
         return new Pair<>(inputKeyValidation(inputPair.getKey()), inputValueValidation(inputPair.getValue()));
     }
 
+    @Override
     public String inputKeyValidation(String inputKey) throws ValidatorException {
 
         if (Strings.isNullOrEmpty(inputKey)) {
@@ -28,6 +30,7 @@ public class LineValidatorImpl implements ILineValidator {
         return inputKey;
     }
 
+    @Override
     public BigDecimal inputValueValidation(String inputValue) {
         return new BigDecimal(inputValue);
     }

@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
+ * Processor for application input arguments
+ *
  * @author Zdeněk Vacek on 13/03/2018
  */
 public class InputArgumentProcessor {

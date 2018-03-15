@@ -8,6 +8,8 @@ import org.apache.log4j.Logger;
 import java.util.Iterator;
 
 /**
+ * Parser for splitting input line into Pair Key and Value
+ *
  * @author Zdeněk Vacek on 13/03/2018
  */
 public class InputLineParser {
@@ -16,6 +18,12 @@ public class InputLineParser {
 
     private static final char SEPARATOR = ' ';
 
+    /**
+     * Parser for splitting input line into Pair Key and Value
+     *
+     * @param line - input line, f.e. "USD 1234"
+     * @return parsed Pair Key and Value
+     * */
     public Pair<String, String> parseLine(String line) {
 
         Iterable<String> lineParts = Splitter.on(SEPARATOR).split(line);
